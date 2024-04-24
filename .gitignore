@@ -1,0 +1,14 @@
+front/node_modules
+back/node_modules
+front/.next/
+front/.env
+back/.env
+back/package-lock.json
+front/package-lock.json
+back/dist
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+next-env.d.ts
