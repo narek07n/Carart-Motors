@@ -1,3 +1,5 @@
-export default function Product() {
-  return <>Products</>;
+"use client";
+
+export default function Product({ params }: { params: { product: string } }) {
+  return <>Product: {params.product}</>;
 }
