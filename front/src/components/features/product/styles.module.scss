@@ -1,0 +1,47 @@
+.container {
+  padding: 20px;
+  width: calc((100% - 90px) / 4);
+  border: 1px solid var(--main_color);
+  background-color: rgba(#9dc49e, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+
+  .image {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 30px;
+  }
+
+  .name {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main_color);
+    font-weight: 600;
+  }
+
+  .price,
+  .descr {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main_color);
+}
+
+.button {
+    font-size: 32px;
+    font-weight: 600;
+    padding: 7px 30px;
+    border-radius: 10px;
+    align-self: flex-end;
+    color: var(--main_color);
+    background-color: transparent;
+    border: 1px solid var(--main_color);
+    transition: all .3s ease;
+
+    &:hover {
+        background-color: var(--main_color);
+        color: black;
+    }
+  }
+}

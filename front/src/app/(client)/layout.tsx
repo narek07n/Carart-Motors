@@ -1,11 +1,10 @@
-import Link from "next/link";
+import { PropsWithChildren } from "react";
 import { Box } from "@mui/material";
-import Image from "next/image";
-import { imagesPNG } from "@/utils/constants/imagesSRC";
 
-import styles from "./styles.module.scss";
+import styles from "./layout.module.scss";
+import Link from "next/link";
 
-export default function Home() {
+export default function Client({ children }: PropsWithChildren) {
   return (
     <>
       <header className={styles.header}>
@@ -28,18 +27,7 @@ export default function Home() {
           </Box>
         </Box>
       </header>
-      <main className={styles.main}>
-        <Box className={styles.box}>
-          <Image
-            className={styles.logo}
-            width={600}
-            height={450}
-            src={imagesPNG.logo}
-            alt="logo"
-          />
-          <h1 className={styles.title}>CARART MOTORS</h1>
-        </Box>
-      </main>
+      <main className={styles.main}>{children}</main>
     </>
   );
 }
