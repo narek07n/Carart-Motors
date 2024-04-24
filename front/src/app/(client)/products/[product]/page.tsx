@@ -2,9 +2,9 @@
 
 import { Box } from "@mui/material";
 import { Image } from "@/components/shared/image";
+import { imagesSVG } from "@/utils/constants/imagesSRC";
 
 import styles from "./styles.module.scss";
-import { imagesPNG } from "@/utils/constants/imagesSRC";
 
 export default function Product({ params }: { params: { product: string } }) {
   const name = "Product 1";
@@ -14,7 +14,7 @@ export default function Product({ params }: { params: { product: string } }) {
   return (
     <Box className={styles.container}>
       <Box className={styles.left}>
-        <Image className={styles.image} src={imagesPNG.logo} alt={name} />
+        <Image className={styles.image} src={imagesSVG.example} alt={name} />
       </Box>
       <Box className={styles.right}>
         <span className={styles.name}>{name}</span>
@@ -24,17 +24,17 @@ export default function Product({ params }: { params: { product: string } }) {
           <Box className={styles.images}>
             <Image
               className={styles.imagesItem}
-              src={imagesPNG.logo}
+              src={imagesSVG.example}
               alt={name}
             />
             <Image
               className={styles.imagesItem}
-              src={imagesPNG.logo}
+              src={imagesSVG.example}
               alt={name}
             />
             <Image
               className={styles.imagesItem}
-              src={imagesPNG.logo}
+              src={imagesSVG.example}
               alt={name}
             />
           </Box>

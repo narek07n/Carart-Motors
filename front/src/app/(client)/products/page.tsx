@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import { Box } from "@mui/material";
 import { Product } from "@/components/features/product";
-import { imagesPNG } from "@/utils/constants/imagesSRC";
+import { imagesSVG } from "@/utils/constants/imagesSRC";
 
 import styles from "./styles.module.scss";
 
@@ -15,7 +15,7 @@ export default function Products() {
             key={nanoid()}
             name="Product1"
             descr="Description about product 1, Some text here..."
-            image={imagesPNG.logo}
+            image={imagesSVG.example}
             price={0}
             id="1"
           />
