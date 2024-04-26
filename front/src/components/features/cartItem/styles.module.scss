@@ -4,5 +4,52 @@
   padding: 20px;
   display: flex;
   width: 100%;
-  background-color: rgba(#9dc49e, .1);
+  background-color: rgba(#9dc49e, 0.1);
+
+  .image {
+    height: 100%;
+    width: 260px;
+  }
+
+  .box {
+    flex: 1;
+    height: 100%;
+    padding: 40px;
+    background-color: rgba(#9dc49e, 0.1);
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    .info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .name {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .price {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+
+      .descr {
+        font-size: 25px;
+      }
+    }
+
+    .button {
+      align-self: flex-end;
+      font-size: 30px;
+      margin: 0;
+      color: var(--main_color);
+      padding: 20px 30px;
+    }
+  }
 }
