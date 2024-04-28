@@ -1,0 +1,40 @@
+.container {
+  max-width: 1700px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  .form {
+    .title {
+      color: var(--main_color);
+      font-size: 50px;
+    }
+
+    background-color: rgba(#9dc49e, 0.1);
+    border-radius: 50px;
+    padding: 40px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+
+    .input {
+      border-radius: 20px;
+      padding: 20px 10px;
+      border: 1px solid var(--main_color);
+      background-color: var(--bg_color);
+      width: 90%;
+    }
+
+    .input,
+    .input::placeholder {
+      font-size: 24px;
+      color: var(--main_color);
+    }
+  }
+}
