@@ -5,14 +5,14 @@ import "dotenv/config";
 export class UserServices {
   private baseUrl;
   constructor() {
-    this.baseUrl = process.env.BASE_URL;
+    this.baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   }
 
   public async loginClient(
     nickname: string,
     password: string
   ): Promise<IUserResponse | { message: string }> {
-    const { data } = await axios.post(`${this.baseUrl}/client/login`, {
+    const { data } = await axios.post(`${this.baseUrl}/users/client/login`, {
       nickname,
       password,
     });
@@ -22,15 +22,24 @@ export class UserServices {
   public async signinClient(
     user: IUserData
   ): Promise<IUserResponse | { message: string }> {
-    const { data } = await axios.post(`${this.baseUrl}/client/signup`, user);
-    return data;
+    try {
+      const { data } = await axios.post(
+        `${this.baseUrl}/users/client/signup`,
+        user
+      );
+      return data;
+    } catch (error: any) {
+      return {
+        message: error.message,
+      };
+    }
   }
 
   public async loginAdmin(
     nickname: string,
     password: string
   ): Promise<IUserResponse | { message: string }> {
-    const { data } = await axios.post(`${this.baseUrl}/admin/login`, {
+    const { data } = await axios.post(`${this.baseUrl}/users/admin/login`, {
       nickname,
       password,
     });
@@ -40,7 +49,10 @@ export class UserServices {
   public async signinAdmin(
     user: IUserData
   ): Promise<IUserResponse | { message: string }> {
-    const { data } = await axios.post(`${this.baseUrl}/admin/signup`, user);
+    const { data } = await axios.post(
+      `${this.baseUrl}/users/admin/signup`,
+      user
+    );
     return data;
   }
 }
