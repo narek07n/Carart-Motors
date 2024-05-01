@@ -12,3 +12,19 @@ export interface IUserResponse {
   role: number;
   session_id: string;
 }
+
+export interface IProductResponse {
+  price: number;
+  img_url: string;
+  name: string;
+  descr: string;
+  product_id: string;
+  created_at: number;
+}
+
+export interface IProducData {
+  price: number;
+  img_url: string;
+  name: string;
+  descr: string;
+}

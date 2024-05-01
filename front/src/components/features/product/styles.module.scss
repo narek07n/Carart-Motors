@@ -26,9 +26,16 @@
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--main_color);
-}
+  }
 
-.button {
+  .more {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main_color);
+    text-decoration: underline;
+  }
+
+  .button {
     font-size: 32px;
     font-weight: 600;
     padding: 7px 30px;
@@ -37,11 +44,11 @@
     color: var(--main_color);
     background-color: transparent;
     border: 1px solid var(--main_color);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-        background-color: var(--main_color);
-        color: black;
+      background-color: var(--main_color);
+      color: black;
     }
   }
 }
