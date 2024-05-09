@@ -8,6 +8,20 @@ export class UserServices {
     this.baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   }
 
+  public async getUser() {
+    try {
+      const session = localStorage.getItem("session_id") ?? "";
+
+      const { data } = await axios.get<IUserResponse>(
+        `${this.baseUrl}/users/${session}`
+      );
+      if (!data) return null;
+      return data;
+    } catch (err) {
+      return null;
+    }
+  }
+
   public async loginClient(
     nickname: string,
     password: string

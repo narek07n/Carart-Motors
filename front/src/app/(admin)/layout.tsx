@@ -5,7 +5,7 @@ import { Image } from "@/components/shared/image";
 import { imagesPNG } from "@/utils/constants/imagesSRC";
 import { Cart } from "@/components/features/cartIcon";
 
-import styles from "./layout.module.scss";
+import styles from "./styles.module.scss";
 
 export default function Client({ children }: PropsWithChildren) {
   return (

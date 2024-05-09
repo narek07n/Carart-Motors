@@ -1,0 +1,37 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(#9dc49e, 0.1);
+
+  .container {
+    padding: 20px;
+    height: 100px;
+    display: flex;
+    max-width: 1700px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    .block {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .link {
+        color: #9dc49e;
+        text-decoration: underline;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #040410;
+  padding: 150px 10px;
+}

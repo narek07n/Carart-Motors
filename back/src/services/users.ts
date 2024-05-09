@@ -50,4 +50,10 @@ export class UserServices {
     if (!newUser) throw Error("Database error");
     return newUser;
   }
+
+  static async getUserBySession(session_id: string) {
+    const user = await DB<IUserResponse>("users").where({ session_id }).first();
+    if (!user) throw Error("Invalid session");
+    return user;
+  }
 }
