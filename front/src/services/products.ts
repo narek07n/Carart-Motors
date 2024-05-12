@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IUserData, IUserResponse } from "@/utils/types/users";
 import "dotenv/config";
 import { IProductData, IProductResponse } from "@/utils/types/products";
 
@@ -34,6 +33,22 @@ export class ProductServices {
     } catch (err) {
       console.log(err);
       return [];
+    }
+  }
+
+  public async getProductById(
+    product_id: string
+  ): Promise<IProductResponse | { message: string }> {
+    try {
+      const { data } = await axios.get<IProductResponse>(
+        `${this.baseUrl}/products/${product_id}`
+      );
+      if (!data)
+        return { message: `Didn't find product with id: ${product_id}` };
+      return data;
+    } catch (err: any) {
+      console.log(err);
+      return { message: err.message };
     }
   }
 }

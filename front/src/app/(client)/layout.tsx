@@ -24,7 +24,7 @@ export default function Client({ children }: PropsWithChildren) {
             </Link>
           </Box>
           <Box className={styles.block}>
-            <Cart number={12} />
+            <Cart />
             <Link className={styles.link} href="/login">
               login
             </Link>

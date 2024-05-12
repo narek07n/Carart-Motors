@@ -60,6 +60,23 @@
           width: calc((100% - 30px) / 3);
           background-color: rgba(#9dc49e, 0.1);
         }
+
+        .loader {
+          height: 100%;
+          width: calc((100% - 30px) / 3);
+        }
+      }
+
+      .buttons {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+
+        .button {
+          font-size: 24px;
+          width: 40%;
+        }
       }
     }
   }

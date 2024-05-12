@@ -7,6 +7,14 @@ export class ProductServices {
     return await DB<IProductResponse>("products");
   }
 
+  static async getProductById(product_id: string): Promise<IProductResponse> {
+    const product = await DB<IProductResponse>("products")
+      .where({ product_id })
+      .first();
+    if (!product) throw Error(`Product with id: ${product_id} doesn't exist`);
+    return product;
+  }
+
   static async addProduct(data: IProducData): Promise<IProductResponse> {
     const product_id = nanoid();
     await DB<IProductResponse>("products").insert({

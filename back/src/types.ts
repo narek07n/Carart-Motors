@@ -28,3 +28,14 @@ export interface IProducData {
   name: string;
   descr: string;
 }
+
+export interface ICartResponse {
+  product_id: string;
+  user_id: string;
+  added_at: number;
+}
+
+export interface ICartData {
+  product_id: string;
+  user_id: string;
+}
