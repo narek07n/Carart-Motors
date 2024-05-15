@@ -1,7 +1,7 @@
 import axios from "axios";
-import "dotenv/config";
 import { ICartData, ICartResponse } from "@/utils/types/cart";
 import { IProductResponse } from "@/utils/types/products";
+import "dotenv/config";
 
 export class CartServices {
   private baseUrl;

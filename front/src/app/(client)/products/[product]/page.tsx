@@ -11,6 +11,7 @@ import { IUserResponse } from "@/utils/types/users";
 import { UserServices } from "@/services/users";
 
 import styles from "./styles.module.scss";
+import { RequestService } from "@/services/requests";
 
 export default function Product({ params }: { params: { product: string } }) {
   const [product, setProduct] = useState<IProductResponse>(initialData);
@@ -19,6 +20,7 @@ export default function Product({ params }: { params: { product: string } }) {
   const [pending, setPending] = useState<boolean>(false);
   const productServices = new ProductServices();
   const userServices = new UserServices();
+  const requestServices = new RequestService();
 
   useEffect(() => {
     setPending(true);
@@ -112,14 +114,29 @@ export default function Product({ params }: { params: { product: string } }) {
                   />
                 )}
               </Box>
-              {user && <div className={styles.buttons}>
-                <Button onClick={() => {}} className={styles.button}>
-                  Buy
-                </Button>
-                <Button onClick={() => handleAddToCart(user.user_id, product.product_id)} className={styles.button}>
-                  Add to Cart
-                </Button>
-              </div>}
+              {user && (
+                <div className={styles.buttons}>
+                  <Button
+                    onClick={() =>
+                      requestServices.request({
+                        product_id: product.product_id,
+                        user_id: user.user_id,
+                      })
+                    }
+                    className={styles.button}
+                  >
+                    Buy
+                  </Button>
+                  <Button
+                    onClick={() =>
+                      handleAddToCart(user.user_id, product.product_id)
+                    }
+                    className={styles.button}
+                  >
+                    Add to Cart
+                  </Button>
+                </div>
+              )}
             </Box>
           </Box>
         </>

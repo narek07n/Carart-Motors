@@ -1,0 +1,28 @@
+.container {
+  padding: 20px;
+  height: 100px;
+  display: flex;
+  max-width: 1700px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .user {
+    padding: 10px;
+    font-size: 30px;
+    background-color: var(--main_color);
+    color: var(--bg_color);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .links {
+    display: flex;
+    gap: 40px;
+
+    .link {
+        color: var(--main_color);
+        font-size: 23px;
+        text-decoration: underline;
+    }
+  }
+}

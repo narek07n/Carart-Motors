@@ -16,6 +16,7 @@ export class UserServices {
         `${this.baseUrl}/users/${session}`
       );
       if (!data) return null;
+
       return data;
     } catch (err) {
       return null;
