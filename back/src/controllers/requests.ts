@@ -23,9 +23,19 @@ export default {
     }
   },
 
-  async getRequests(req: Request, res: Response) {
+  async getRequests(_: Request, res: Response) {
     try {
       const requests = await RequestsServices.getRequests();
+      res.status(200).send(requests);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  },
+
+  async getRequestsByUser(req: Request, res: Response) {
+    try {
+      const { user_id } = req.params;
+      const requests = await RequestsServices.getRequestsByUser(user_id);
       res.status(200).send(requests);
     } catch (error) {
       res.status(500).json(error);

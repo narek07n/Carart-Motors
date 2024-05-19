@@ -19,6 +19,22 @@ export class RequestService {
     }
   }
 
+  public async getResponsesByUser(
+    user_id: string
+  ): Promise<IRequestsResponse[]> {
+    try {
+      const { data } = await axios.get<IRequestsResponse[]>(
+        `${this.baseUrl}/requests/${user_id}`
+      );
+
+      if (!data) return [];
+      return data;
+    } catch (err: any) {
+      console.log(err.message);
+      return [];
+    }
+  }
+
   public async request(
     request: IRequestsData
   ): Promise<IRequestsResponse | null> {

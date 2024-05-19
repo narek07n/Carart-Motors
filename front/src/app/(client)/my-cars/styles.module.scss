@@ -12,5 +12,62 @@
     font-size: 50px;
     color: var(--main_color);
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 100px;
+  }
+
+  .list {
+    color: var(--main_color);
+    width: 100%;
+
+    .listItem {
+      width: 50%;
+      cursor: pointer;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 20px;
+      border: 1px solid var(--main_color);
+
+      .name {
+        font-size: 40px;
+        color: var(--main_color);
+        gap: 40px;
+        display: flex;
+        align-items: center;
+
+        .identifier {
+          width: 250px;
+          display: block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .indicator {
+        display: block;
+        padding: 20px 10px;
+        font-size: 35px;
+        color: white;
+        border-radius: 20px;
+        border: 3px solid;
+        font-weight: 600;
+      }
+
+      .pending {
+        background-color: rgb(234, 188, 63);
+        border-color: rgb(207, 157, 19);
+      }
+
+      .active {
+        background-color: rgb(72, 239, 63);
+        border-color: rgb(13, 137, 6);
+      }
+
+      .deleted {
+        background-color: rgb(238, 74, 74);
+        border-color: rgb(142, 4, 4);
+      }
+    }
   }
 }

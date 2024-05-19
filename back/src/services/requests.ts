@@ -42,4 +42,10 @@ export class RequestsServices {
   static async getRequests(): Promise<IRequestsResponse[]> {
     return await DB<IRequestsResponse>("requests");
   }
+
+  static async getRequestsByUser(
+    user_id: string
+  ): Promise<IRequestsResponse[]> {
+    return await DB<IRequestsResponse>("requests").where({ user_id });
+  }
 }
