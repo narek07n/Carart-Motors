@@ -1,0 +1,16 @@
+.container {
+  padding: 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1700px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .title {
+    font-size: 50px;
+    color: var(--main_color);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}

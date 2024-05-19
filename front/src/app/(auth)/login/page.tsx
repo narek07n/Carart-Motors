@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { Button, Input } from "@mui/material";
+import { Box, Button, Input } from "@mui/material";
 import { useState } from "react";
 import { IUserData } from "@/utils/types/users";
 import { loginUser } from "./helpers";
@@ -31,7 +31,7 @@ export default function Login() {
   };
 
   return (
-    <div className={styles.container}>
+    <Box className={styles.container}>
       <form className={styles.form}>
         <h3 className={styles.title}>Log in</h3>
         <Input
@@ -53,6 +53,6 @@ export default function Login() {
         <Button onClick={handleSubmit}>Log in</Button>
         {error && <p className={styles.error}>{error}</p>}
       </form>
-    </div>
+    </Box>
   );
 }

@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Button, Input } from "@mui/material";
+import { Box, Button, Input } from "@mui/material";
 import { IProductData } from "@/utils/types/products";
+import { handleProductSubmit } from "./helpers";
 
 import styles from "./styles.module.scss";
-import { handleProductSubmit } from "./helpers";
 
 export default function AddProd() {
   const [data, setData] = useState<IProductData>({
@@ -28,7 +28,7 @@ export default function AddProd() {
   };
 
   return (
-    <div className={styles.container}>
+    <Box className={styles.container}>
       <h2 className={styles.title}>Add product</h2>
       <form className={styles.form}>
         <Input
@@ -65,6 +65,6 @@ export default function AddProd() {
         />
         <Button onClick={handleSubmit}>Add Product</Button>
       </form>
-    </div>
+    </Box>
   );
 }

@@ -1,0 +1,14 @@
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .window {
+        width: 60%;
+        min-height: 400px;
+        padding: 50px;
+        border-radius: 50px;
+        background-color: var(--main_color);
+        color: var(--bg_color);
+    }
+}

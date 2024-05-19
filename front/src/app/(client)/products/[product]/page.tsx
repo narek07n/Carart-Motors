@@ -9,9 +9,9 @@ import { IProductResponse } from "@/utils/types/products";
 import { handleAddToCart, initialData } from "./constats";
 import { IUserResponse } from "@/utils/types/users";
 import { UserServices } from "@/services/users";
+import { RequestService } from "@/services/requests";
 
 import styles from "./styles.module.scss";
-import { RequestService } from "@/services/requests";
 
 export default function Product({ params }: { params: { product: string } }) {
   const [product, setProduct] = useState<IProductResponse>(initialData);
@@ -69,13 +69,13 @@ export default function Product({ params }: { params: { product: string } }) {
               <p className={styles.descr}>{product.descr}</p>
               <Box className={styles.images}>
                 {pending || !product.img_url ? (
-                  <div className={styles.loader}>
+                  <Box className={styles.loader}>
                     <Skeleton
                       borderRadius={0}
                       baseColor="#040410"
                       style={{ height: "100%" }}
                     />
-                  </div>
+                  </Box>
                 ) : (
                   <Image
                     className={styles.imagesItem}
@@ -84,13 +84,13 @@ export default function Product({ params }: { params: { product: string } }) {
                   />
                 )}
                 {pending || !product.img_url ? (
-                  <div className={styles.loader}>
+                  <Box className={styles.loader}>
                     <Skeleton
                       borderRadius={0}
                       baseColor="#040410"
                       style={{ height: "100%" }}
                     />
-                  </div>
+                  </Box>
                 ) : (
                   <Image
                     className={styles.imagesItem}
@@ -99,13 +99,13 @@ export default function Product({ params }: { params: { product: string } }) {
                   />
                 )}
                 {pending || !product.img_url ? (
-                  <div className={styles.loader}>
+                  <Box className={styles.loader}>
                     <Skeleton
                       borderRadius={0}
                       baseColor="#040410"
                       style={{ height: "100%" }}
                     />
-                  </div>
+                  </Box>
                 ) : (
                   <Image
                     className={styles.imagesItem}
@@ -115,7 +115,7 @@ export default function Product({ params }: { params: { product: string } }) {
                 )}
               </Box>
               {user && (
-                <div className={styles.buttons}>
+                <Box className={styles.buttons}>
                   <Button
                     onClick={() =>
                       requestServices.request({
@@ -135,7 +135,7 @@ export default function Product({ params }: { params: { product: string } }) {
                   >
                     Add to Cart
                   </Button>
-                </div>
+                </Box>
               )}
             </Box>
           </Box>
