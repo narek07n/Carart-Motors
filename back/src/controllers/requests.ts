@@ -15,7 +15,8 @@ export default {
   async respond(req: Request, res: Response) {
     try {
       const { request_id } = req.params;
-      const request = await RequestsServices.respond(request_id, req.body);
+      const { status } = req.body;
+      const request = await RequestsServices.respond(request_id, status);
       res.status(200).send(request);
     } catch (error) {
       res.status(500).json(error);

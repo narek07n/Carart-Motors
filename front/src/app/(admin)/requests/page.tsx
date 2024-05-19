@@ -12,9 +12,14 @@ import { RequestModal } from "@/components/features/requestModal";
 
 export default function Requests() {
   const [requsts, setRequests] = useState<IRequestsResponse[]>([]);
-  const [modal, setModal] = useState<{ open: boolean; id: string }>({
+  const [modal, setModal] = useState<{
+    open: boolean;
+    id: string;
+    request_id: string;
+  }>({
     id: "",
     open: false,
+    request_id: "",
   });
   const requestServices = new RequestService();
 
@@ -30,7 +35,14 @@ export default function Requests() {
           <Box
             key={res.request_id}
             className={styles.request}
-            onClick={() => setModal({ open: true, id: res.product_id })}
+            onClick={(ev) => {
+              res.status === 0 &&
+                setModal({
+                  open: true,
+                  id: res.product_id,
+                  request_id: res.request_id,
+                });
+            }}
           >
             <span className={styles.name}>
               Request:{" "}
@@ -49,9 +61,10 @@ export default function Requests() {
         ))}
       </Box>
       <RequestModal
-        onClose={() => setModal({ id: "", open: false })}
         open={modal.open}
         product_id={modal.id}
+        request_id={modal.request_id}
+        onClose={() => setModal({ id: "", open: false, request_id: "" })}
       />
     </Box>
   );

@@ -38,6 +38,7 @@ export class RequestsServices {
     if (!request) throw Error(`Couldn't find request with id ::${request_id}`);
     return request;
   }
+
   static async getRequests(): Promise<IRequestsResponse[]> {
     return await DB<IRequestsResponse>("requests");
   }

@@ -34,14 +34,16 @@ export class RequestService {
       return null;
     }
   }
-  
+
   public async respond(
-    request: IRequestsData
+    request: Pick<IRequestsResponse, "status" | "request_id">
   ): Promise<IRequestsResponse | null> {
     try {
-      const { data } = await axios.post<IRequestsResponse>(
-        `${this.baseUrl}/requests`,
-        request
+      const { data } = await axios.put<IRequestsResponse>(
+        `${this.baseUrl}/requests/${request.request_id}`,
+        {
+          status: request.status,
+        }
       );
       if (!data) return null;
       return data;

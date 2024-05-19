@@ -43,6 +43,7 @@ export class ProductServices {
       const { data } = await axios.get<IProductResponse>(
         `${this.baseUrl}/products/${product_id}`
       );
+
       if (!data)
         return { message: `Didn't find product with id: ${product_id}` };
       return data;

@@ -1,4 +1,5 @@
 export interface IRequestsData {
+  status?: number;
   user_id: string;
   product_id: string;
 }
