@@ -12,18 +12,18 @@ export default function Home() {
         <Box className={styles.container}>
           <Box className={styles.block}>
             <Link className={styles.link} href="/products">
-              products
+              Products
             </Link>
             <Link className={styles.link} href="/my-cars">
-              my cars
+              My Cars
             </Link>
           </Box>
           <Box className={styles.block}>
             <Link className={styles.link} href="/login">
-              login
+              Login
             </Link>
             <Link className={styles.link} href="/signup">
-              signup
+              Signup
             </Link>
           </Box>
         </Box>

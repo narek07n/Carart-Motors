@@ -35,19 +35,19 @@ export default function Admin({ children }: PropsWithChildren) {
               <Image alt="logo" src={imagesPNG.logo} className={styles.logo} />
             </Link>
             <Link className={styles.link} href="/products">
-              products
+              Products
             </Link>
             <Link className={styles.link} href="/my-cars">
-              my cars
+              My Cars
             </Link>
           </Box>
           <Box className={styles.block}>
             <Cart />
             <Link className={styles.link} href="/login">
-              login
+              Login
             </Link>
             <Link className={styles.link} href="/signup">
-              signup
+              Signup
             </Link>
           </Box>
         </Box>
