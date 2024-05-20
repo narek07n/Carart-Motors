@@ -23,6 +23,19 @@ export class UserServices {
     }
   }
 
+  public async removeUser(user_id: string) {
+    try {
+      const { data } = await axios.delete<IUserResponse>(
+        `${this.baseUrl}/users/${user_id}`
+      );
+      if (!data) return null;
+
+      return data;
+    } catch (err) {
+      return null;
+    }
+  }
+
   public async loginClient(
     nickname: string,
     password: string

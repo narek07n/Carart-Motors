@@ -11,6 +11,7 @@ export interface IUserResponse {
   user_id: string;
   role: number;
   session_id: string;
+  one_time_code: string;
 }
 
 export interface IProductResponse {

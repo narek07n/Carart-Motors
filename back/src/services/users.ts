@@ -1,8 +1,9 @@
 import bcrypt from "bcrypt";
-import { nanoid } from "nanoid";
+import { nanoid, customAlphabet } from "nanoid";
 import { IUserData, IUserResponse } from "../types";
 import DB from "../DB";
 import { object, string } from "yup";
+import EmailService from "../utils/helpers/mailer";
 
 export class UserServices {
   static async SignupClient(data: IUserData): Promise<IUserResponse> {
@@ -14,6 +15,9 @@ export class UserServices {
     const user = await userSchema.validate(data);
     const session_id = nanoid();
     const user_id = nanoid();
+
+    const oneTimeCode = customAlphabet("0123456789", 6)();
+
     if (!user.email || !user.nickname || !user.password)
       throw Error("Invalid user data");
     const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -23,10 +27,16 @@ export class UserServices {
       role: 0,
       session_id,
       user_id,
+      one_time_code: oneTimeCode,
     });
 
     const newUser = await DB<IUserResponse>("users").where({ user_id }).first();
     if (!newUser) throw Error("Cannot add new user");
+    const mailer = new EmailService();
+    mailer.sendResetPasswordEmail(
+      user.email,
+      `Your confirmation code is ${oneTimeCode}`
+    );
     return newUser;
   }
 

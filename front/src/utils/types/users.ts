@@ -10,5 +10,6 @@ export interface IUserResponse {
   password: string;
   user_id: string;
   role: number;
+  one_time_code: string;
   session_id: string;
 }

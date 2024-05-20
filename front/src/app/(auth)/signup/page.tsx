@@ -28,7 +28,7 @@ export default function Signup() {
         setError(res.message);
         return;
       }
-      router.push("/my-cars");
+      router.push("/confirm");
     } catch (error: any) {
       setError(error.message);
     }
