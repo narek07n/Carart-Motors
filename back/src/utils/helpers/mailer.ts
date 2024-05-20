@@ -23,7 +23,7 @@ class EmailService {
         from: "tttttteeeeeesssssttttt@gmail.com",
         to: email,
         subject: "Reset Your Password",
-        text: `Your reset code is: ${resetCode} \n\n Visit http://localhost:3000/login?type=reset and login with this pass`,
+        text: `Your reset code is: ${resetCode} \n\n Visit http://localhost:3000/confirm and login with this one time code`,
       };
 
       await this.transporter.sendMail(mailOptions);
